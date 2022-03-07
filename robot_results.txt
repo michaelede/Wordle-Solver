@@ -1,0 +1,13 @@
+
+2022-02-12 08:48  'Robot'  THORN  3  ['ALERT', 'OHIAS', 'THORN']  
+2022-02-12 09:41  'Robot'  GNASH  3  ['ALERT', 'SAYON', 'GNASH']  
+2022-02-12 09:43  'Robot'  HASTE  3  ['ALERT', 'OHIAS', 'HASTE']  
+2022-02-12 09:43  'Robot'  MEATY  4  ['ALERT', 'OHIAS', 'MATEY', 'MEATY']  
+2022-02-12 15:13  'Robot'  PURER  4  ['ALERT', 'PODIA', 'CURSE', 'PURER']  
+2022-02-12 15:39  'Robot'  SHOWN  3  ['ALERT', 'SAYON', 'SHOWN']  
+2022-02-12 15:40  'Robot'  DEALT  5  ['ALERT', 'AUXIN', 'SLEPT', 'CAVED', 'DEALT']  
+2022-02-12 16:11  'Robot'  THERE  3  ['ALERT', 'STERN', 'THERE']  
+2022-02-12 16:12  'Robot'  WIELD  3  ['ALERT', 'WHIDS', 'WIELD']  
+2022-02-13 18:48  'Robot'  BRIEF  4  ['ALERT', 'PODIA', 'FERNS', 'BRIEF']  
+2022-02-13 18:48  'Robot'  CHIMB  6  ['ALERT', 'CHIMB']  
+ 
