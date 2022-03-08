@@ -1,3 +1,4 @@
+
 # def select_engine(engine_on):
 #   if not engine_on:
 #     engine = None
@@ -9,7 +10,7 @@
 
 def secret_word_input(dictionary):
     secret_word_valid = False
-    while secret_word_valid == False:
+    while secret_word_valid is False:
         secret_word = input("Secret word: ")
         if secret_word in dictionary:
             secret_word_valid = True
@@ -49,8 +50,13 @@ def today_secret_word(day_index):
 
 def secret_word_menu():
     print(
-        "Choose preferred option:\n  1. Play today's game\n  2. Provide Secret Word with automatic scoring\n  3. Randomly select secret word\n  4. Don't provide Secret Word & self score"
-    )
+        '''
+        Choose preferred option:
+           1. Play today's game
+           2. Provide Secret Word with automatic scoring
+           3. Randomly select secret word
+           4. Don't provide Secret Word & self score
+        ''')
     while True:
         secret_selection = input("\n                        Selection: ")
         if secret_selection == "" or secret_selection == "1":

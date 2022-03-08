@@ -1,8 +1,10 @@
 """
 The functions below deal with user guess inputs:
 - guess_input:    prompts the user to enter their guess and  the guess score
-- guess_scoring:  converts the guess into lists representing the position of green letters, yellow letters etc.
-- big_filter:    filters the remaining word list for words compatible with the previous guess.
+- guess_scoring:  converts the guess into lists representing the position
+     of green letters, yellow letters etc.
+- big_filter:    filters the remaining word list for words compatible with
+     the previous guess.
 """
 results_colour = {"-": "⬛", "Y": "🟨", "G": "🟩"}
 

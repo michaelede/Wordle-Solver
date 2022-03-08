@@ -48,7 +48,7 @@ def conclusion(print_sequence):
     join_guesses = "\n             ".join(print_sequence)
     length = int(len(print_sequence) / 2)
     print(f"Congratulations, you completed the game in {length} attempts.")
-    print(f"Your guesses were:\n")
+    print("Your guesses were:\n")
     print(f"             {join_guesses}\n")
     secret_word_string = (print_sequence[-2]).upper()
     secret_word = []
@@ -61,9 +61,17 @@ def conclusion(print_sequence):
 
 
 def commentary(text_selection):
-    print_maximise = print("\nTo maximise available information, choose from the below which exclude previously guessed letters but are optimised for letter frequency in the remaining valid words:")
-    print_maximise2 = print("\nTo maximise available information, choose from the below which exclude previously guessed letters apart from yellows but are optimised for letter frequency in the remaining valid words:")
-    print_guess = print("\nIf making a guess these words - which have equal probability - will maximise the information you gain if you are wrong. The highest scored words are:")
+    print_maximise = print("\nTo maximise available information, choose from "
+                           "the below which exclude previously guessed letters"
+                           " but are optimised for letter frequency in the "
+                           "remaining valid words:")
+    print_maximise2 = print("\nTo maximise available information, choose from "
+                            "the below which exclude previously guessed "
+                            "letters apart from yellows but are optimised for "
+                            "letter frequency in the remaining valid words:")
+    print_guess = print("\nIf making a guess these words - which have equal "
+                        "probability - will maximise the information you "
+                        "gain if you are wrong. The highest scored words are:")
     if text_selection == "maximise":
         return print_maximise
     elif text_selection == "maximise2":
@@ -77,7 +85,8 @@ def append_string(file, string):
         f.write(string)
 
 
-def termination(dt_string, user, secret_word, guess_round, guesses, print_sequence):
+def termination(dt_string, user, secret_word, guess_round, guesses,
+                print_sequence):
     secret_word = conclusion(print_sequence)
     saveValue = input("Save? (y/n): ")
     if (saveValue != "n"):
@@ -87,7 +96,8 @@ def termination(dt_string, user, secret_word, guess_round, guesses, print_sequen
     print("Thank you for playing.")
 
 
-def robot_termination(dt_string, user, secret_word, guess_round, guesses, print_sequence):
+def robot_termination(dt_string, user, secret_word, guess_round, guesses,
+                      print_sequence):
     secret_word = conclusion(print_sequence)
     saveString = f"\n{dt_string}  'Robot'  {secret_word}  {guess_round}  {guesses}  "
     append_string('robot_results.txt', saveString)
