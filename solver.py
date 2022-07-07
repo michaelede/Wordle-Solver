@@ -6,7 +6,13 @@ The functions below deal with user guess inputs:
 - big_filter:    filters the remaining word list for words compatible with
      the previous guess.
 """
-results_colour = {"-": "⬛", "Y": "🟨", "G": "🟩"}
+from datetime import datetime
+
+# Old colours: 🟨, 🟩, ⬛ )
+results_colour = {
+    "-": "⬛",
+    "Y": "🟨",
+    "G": "🟩"}
 
 
 def guess_input():
@@ -22,12 +28,16 @@ def guess_input():
 def score_input():
     score_length = 0
     input_score = []
+
     while score_length != 5:
         input_score_base = input("Type the score:   ").lower()
         score_length = len(input_score_base)
+
         if score_length != 5:
             print("Must be a five letter score.")
+
     for letter in input_score_base:
+
         if letter == ".":
             input_score.append("g")
         elif letter == ",":
@@ -36,8 +46,8 @@ def score_input():
             input_score.append("-")
         else:
             input_score.append(letter)
-    input_score = "".join(input_score)
-    return input_score
+
+    return "".join(input_score)
 
 
 def score_colour(input_score):
@@ -67,24 +77,31 @@ def print_results(print_word, print_score):
 def guess_scoring(input_word, input_score, grey_letters):
     green_position = []
     yellow_position = []
+
     for letter in range(0, len(input_score)):
+
         if input_score[letter] == "g" or input_score[letter] == ".":
             green_position.append(input_word[letter])
             yellow_position.append(None)
+
         elif input_score[letter] == "y" or input_score[letter] == ",":
             green_position.append(None)
             yellow_position.append(input_word[letter])
+
         elif input_score[letter] == "-" or input_score[letter] == "/":
             green_position.append(None)
             yellow_position.append(None)
             grey_letters.append(input_word[letter])
+
         else:
             print("You have typed an invalid character.")
+
     return green_position, yellow_position, grey_letters
 
 
 def five_greens(green_position):
     green_letters = list(filter(None, green_position))
+
     if len(green_letters) == 5:
         five_greens = True
     else:
@@ -93,41 +110,57 @@ def five_greens(green_position):
 
 
 def green_filter(word_list, green_position):
+
     obey_greens = []
+
     for candidate in word_list:
         obey_green_test = True
+
         for letter in range(0, len(candidate)):
+
             if (green_position[letter] != candidate[letter]
-                    and green_position[letter] != None):
+                    and green_position[letter] is not None):
                 obey_green_test = False
-        if obey_green_test == True:
+
+        if obey_green_test is True:
             obey_greens.append(candidate)
+
     return obey_greens
 
 
 def yellow_letter_filter(word_list, yellow_position):
     yellow_letters = list(filter(None, yellow_position))
     obey_yellow_letters = []
+
     for candidate in word_list:
         obeyYellowLetterTest = True
+
         for letter in range(0, len(yellow_letters)):
+
             if (yellow_letters[letter] not in candidate):
                 obeyYellowLetterTest = False
-        if (obeyYellowLetterTest == True):
+
+        if (obeyYellowLetterTest is True):
             obey_yellow_letters.append(candidate)
+
     return obey_yellow_letters
 
 
 def yellow_position_filter(word_list, yellow_position):
     obey_yellow_position = []
+
     for candidate in word_list:
         obey_yellow_position_test = True
+
         for letter in range(0, len(candidate)):
+
             if (yellow_position[letter] == candidate[letter]
-                    and yellow_position[letter] != None):
+                    and yellow_position[letter] is not None):
                 obey_yellow_position_test = False
-        if (obey_yellow_position_test == True):
+
+        if (obey_yellow_position_test is True):
             obey_yellow_position.append(candidate)
+
     return obey_yellow_position
 
 
@@ -138,7 +171,7 @@ def grey_filter(word_list, grey_letters):
         for letter in range(0, len(candidate)):
             if (candidate[letter] in grey_letters):
                 obey_grey_letter_test = False
-        if (obey_grey_letter_test == True):
+        if obey_grey_letter_test is True:
             obey_greys.append(candidate)
     return obey_greys
 
@@ -155,7 +188,9 @@ def big_filter(word_list, green_position, yellow_position, grey_letters):
 
 def unused_letter_dict(word_list, guess):
     """
-    Used for filtering a dictionary of words containing any letters from the guess (i.e. all greens, yellows, greys removed). You would use this to maximise your range of known letters. Especially useful on second guess.
+    Used for filtering a dictionary of words containing any letters from the
+    guess (i.e. all greens, yellows, greys removed). You would use this to
+    maximise your range of known letters. Especially useful on second guess.
     """
     filtered_words = []
     guess_list = list(guess)
@@ -171,7 +206,8 @@ def unused_letter_dict(word_list, guess):
 
 def unused_yellow_dict(word_list, yellow_position, greys):
     """
-    Used for filtering greys, but keeping words with the yellow letters, except where they are in the known wrong position.
+Used for filtering greys, but keeping words with the yellow letters,
+except where they are in the known wrong position.
     """
     obey_yellow_position = yellow_position_filter(word_list, yellow_position)
     obey_greys = grey_filter(obey_yellow_position, greys)

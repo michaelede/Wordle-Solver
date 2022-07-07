@@ -7,6 +7,10 @@
 #     engine = "engine_alpha"
 #   return engine
 
+import random
+from datetime import date
+from datetime import datetime
+
 
 def secret_word_input(dictionary):
     secret_word_valid = False
@@ -23,14 +27,11 @@ def secret_word_input(dictionary):
 
 
 def random_secret_word(dictionary):
-    import random
     secret_word = random.choice(dictionary)
     return secret_word
 
 
 def days_since_inception():
-    from datetime import date
-    from datetime import datetime
     now = datetime.now()
     inception_date = date(2021, 6, 19)
     year = int(now.strftime("%Y"))

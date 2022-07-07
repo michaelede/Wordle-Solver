@@ -72,3 +72,6 @@ Datetime  User  Secret_word  Guess_No  Guesses
 2022-03-03 19:53  ME  MOURN  4  ['ORATE', 'SONIC', 'HORNY', 'MOURN']  
 2022-03-07 11:19  ME  HOARD  3  ['CRANE', 'SHARP', 'HOARD']  
 2022-03-08 08:41  ME  SWEET  4  ['ALERT', 'SCENT', 'SHEET', 'SWEET']  
+2022-04-30 08:29  ME  TIBIA  4  ['ALERT', 'SYNCH', 'PATIO', 'TIBIA']  
+
+2022-04-30 08:43  ME  HASTY  3  ['ALERT', 'SYNCH', 'HASTY']  
